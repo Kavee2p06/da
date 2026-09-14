@@ -5,190 +5,259 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaveesha Karalliyadda | Academic Portfolio</title>
     <style>
-        :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --accent: #2563eb;
-            --accent-light: #eff6ff;
-            --border: #e2e8f0;
+        @keyframes luxuryGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        :root {
+            --bg-deep: #0a0d14;
+            --surface: #121824;
+            --surface-hover: #1b2436;
+            --accent-gold: #d4af37;
+            --accent-glow: #00f0ff;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-color: rgba(212, 175, 55, 0.2);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-color);
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            background-color: var(--bg-deep);
+            line-height: 1.7;
         }
 
         header {
-            background: var(--card-bg);
-            padding: 32px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            margin-bottom: 24px;
+            background: linear-gradient(-45deg, #0a0d14, #121824, #0d1b2a, #1b1f3b);
+            background-size: 300% 300%;
+            animation: luxuryGlow 12s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 5rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
         }
 
-        h1 {
-            font-size: 2.2rem;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-            margin-bottom: 6px;
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(0, 240, 255, 0.05) 0%, transparent 70%);
+            pointer-events: none;
         }
 
-        .subtitle {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 1.05rem;
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            margin: 0.75rem 0 0;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
         }
 
         section {
-            background: var(--card-bg);
-            padding: 28px 32px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            margin-bottom: 24px;
+            background: var(--surface);
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-color);
         }
 
         h2 {
-            font-size: 1.15rem;
-            color: var(--text-primary);
+            color: var(--accent-gold);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 0.6rem;
+            margin-top: 0;
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--accent-light);
         }
 
-        p {
-            color: var(--text-secondary);
-            font-size: 0.98rem;
-            margin-bottom: 12px;
+        p, li {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .info-card {
+            background: var(--surface-hover);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .info-card h3 {
+            margin: 0 0 0.4rem 0;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-card p {
+            margin: 0;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
         }
 
         ul {
-            list-style-type: square;
-            padding-left: 20px;
-            color: var(--text-secondary);
+            padding-left: 1.2rem;
+            margin: 0.5rem 0;
         }
 
         li {
-            margin-bottom: 8px;
-        }
-
-        .tags-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        .tag-card {
-            background: var(--accent-light);
-            border: 1px solid #dbeafe;
-            padding: 12px 16px;
-            border-radius: 8px;
-            color: var(--accent);
-            font-weight: 500;
-            font-size: 0.92rem;
+            margin-bottom: 0.75rem;
         }
 
         a {
-            color: var(--accent);
+            color: var(--accent-gold);
             text-decoration: none;
-            font-weight: 500;
+            transition: opacity 0.2s ease;
         }
 
         a:hover {
+            opacity: 0.8;
             text-decoration: underline;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--surface-hover);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         footer {
             text-align: center;
-            padding-top: 12px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <h1>Kaveesha Karalliyadda</h1>
+        <p>Integrated Business Management &mdash; Dong-A University, Busan, South Korea</p>
+    </header>
+
     <div class="container">
         
-        <header>
-            <h1>Kaveesha Karalliyadda</h1>
-            <div class="subtitle">Integrated Business Management Student</div>
-        </header>
-
         <section>
-            <h2>About Me</h2>
-            <p>I am an Integrated Business Management student at Dong-A University in Busan, South Korea. I enjoy working independently to build new practical skills and solve structured business problems. My goal is to build a strong foundation in business strategy and data-driven management for my future career.</p>
-        </section>
-
-        <section>
-            <h2>Education</h2>
-            <p><strong>Dong-A University</strong> — Busan, South Korea</p>
-            <p>Degree Program: Integrated Business Management</p>
-        </section>
-
-        <section>
-            <h2>Diplomas & Professional Qualifications</h2>
-            <ul>
-                <li><strong>Pearson Assured Diploma in Business Management</strong> (2023)</li>
-                <li><strong>Pearson Assured Diploma in English</strong> (2022)</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Language Certifications</h2>
-            <ul>
-                <li><strong>IELTS Academic:</strong> Overall Band Score 7.0 (Listening 7.5 | Reading 7.0 | Speaking 6.5 | Writing 6.0)</li>
-                <li><strong>TOPIK (Test of Proficiency in Korean):</strong> Level 3 Completed</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Current Coursework & Skill Focus</h2>
-            <p>Currently developing foundational technical and business skills through my current university courses:</p>
-            <div class="tags-grid">
-                <div class="tag-card">Basic Python Programming</div>
-                <div class="tag-card">Business Management</div>
-                <div class="tag-card">Introductory Data Analysis</div>
-                <div class="tag-card">Git & Web Hosting Basics</div>
+            <h2>Profile Overview</h2>
+            <p>A curious and determined individual driven by a deep fascination with global dynamics, enterprise, and economic structures. Proudly Sri Lankan, with a steadfast commitment to contributing meaningfully to my home country's future growth.</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Institution</h3>
+                    <p>Dong-A University</p>
+                </div>
+                <div class="info-card">
+                    <h3>Major</h3>
+                    <p>Integrated Business Management</p>
+                </div>
+                <div class="info-card">
+                    <h3>Location</h3>
+                    <p>Busan, South Korea</p>
+                </div>
             </div>
         </section>
 
         <section>
-            <h2>Projects & Learning Progress</h2>
-            <p>I haven’t completed a formal class project yet, as I’m still in the early stages of my studies. I am using this portfolio section to track my learning progress, upcoming class assignments, and practical coursework exercises as I continue developing my skills in business and technology.</p>
+            <h2>Academic Foundation & Credentials</h2>
+            <ul>
+                <li><strong>Pearson Diploma:</strong> Core academic credentials supporting international higher education.</li>
+                <li><strong>Language Competency:</strong> Verified English proficiency (IELTS) and advanced Korean language qualifications (TOPIK II).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ambitions & Research Focus</h2>
+            <p>Pursuing this degree to build the foundation for a career as a successful entrepreneur. Passionate about understanding how the world economy functions, exploring international trade, and conducting independent economic research. My core areas of intellectual curiosity span:</p>
+            <div class="tag-container">
+                <span class="tag">World Economy</span>
+                <span class="tag">Geopolitics</span>
+                <span class="tag">Economics</span>
+                <span class="tag">International Trade</span>
+                <span class="tag">International Affairs</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skillset</h2>
+            <p>Expanding capabilities beyond traditional business strategy by learning programming languages, including Python, to bridge quantitative analysis and modern enterprise execution.</p>
+        </section>
+
+        <section>
+            <h2>Personal Interests</h2>
+            <div class="tag-container">
+                <span class="tag">Reading</span>
+                <span class="tag">Singing</span>
+                <span class="tag">Listening to Music</span>
+            </div>
         </section>
 
         <section>
             <h2>Contact & Links</h2>
-            <p><strong>Email:</strong> <a href="mailto:kaveeshakaralliyadda2p06@gmail.com">kaveeshakaralliyadda2p06@gmail.com</a></p>
-            <p><strong>GitHub Repository:</strong> <a href="https://github.com/Kavee2p06/da" target="_blank">github.com/Kavee2p06/da</a></p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:kavee2p06@example.com">kavee2p06@example.com</a></li>
+                <li><strong>GitHub Repository:</strong> <a href="https://github.com/kavee2p06/da" target="_blank">github.com/kavee2p06/da</a></li>
+                <li><strong>Live Web Portfolio:</strong> <a href="https://kavee2p06.github.io/da/" target="_blank">kavee2p06.github.io/da/</a></li>
+            </ul>
         </section>
 
-        <footer>
-            &copy; 2026 Kaveesha Karalliyadda
-        </footer>
-
     </div>
+
+    <footer>
+        <p>&copy; 2026 Kaveesha Karalliyadda. Dong-A University. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
