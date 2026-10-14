@@ -220,4 +220,173 @@
 
     .btn-gold {
       background: linear-gradient(135deg, #d4af37, #b38f24);
-      color: #
+      color: #07080a;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 6px 25px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    ul.styled-list {
+      list-style: none;
+    }
+
+    ul.styled-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 12px;
+    }
+
+    ul.styled-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+    }
+
+    /* Contact Links */
+    .contact-link {
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover {
+      color: var(--accent-gold);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--card-border);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Profile Header -->
+    <header>
+      <h1 class="profile-name">Kaveesha Karalliyadda</h1>
+      <p class="subtitle">Integrated Business Management — Dong-A University, Busan, South Korea</p>
+    </header>
+
+    <!-- Profile Overview -->
+    <div class="section-card">
+      <div class="section-title"><i class="fa-solid fa-user"></i> Profile Overview</div>
+      <p style="color: var(--text-muted);">
+        A curious and determined individual driven by a deep fascination with global dynamics, enterprise, and economic structures. Proudly Sri Lankan, with a steadfast commitment to contributing meaningfully to my home country's future growth.
+      </p>
+      
+      <div class="info-grid">
+        <div class="info-box">
+          <div class="info-label">Institution</div>
+          <div class="info-val">Dong-A University</div>
+        </div>
+        <div class="info-box">
+          <div class="info-label">Major</div>
+          <div class="info-val">Integrated Business Management</div>
+        </div>
+        <div class="info-box">
+          <div class="info-label">Location</div>
+          <div class="info-val">Busan, South Korea</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Academic Foundation & Credentials -->
+    <div class="section-card">
+      <div class="section-title"><i class="fa-solid fa-graduation-cap"></i> Academic Foundation & Credentials</div>
+      <ul class="styled-list" style="color: var(--text-muted);">
+        <li><strong style="color: var(--text-main);">Pearson Diploma:</strong> Core academic credentials supporting international higher education.</li>
+        <li><strong style="color: var(--text-main);">Language Competency:</strong> Verified English proficiency (IELTS) and advanced Korean language qualifications (TOPIK II).</li>
+      </ul>
+    </div>
+
+    <!-- Ambitions & Research Focus -->
+    <div class="section-card">
+      <div class="section-title"><i class="fa-solid fa-compass"></i> Ambitions & Research Focus</div>
+      <p style="color: var(--text-muted); margin-bottom: 16px;">
+        Pursuing this degree to build the foundation for a career as a successful entrepreneur. Passionate about understanding how the world economy functions, exploring international trade, and conducting independent economic research. My core areas of intellectual curiosity span:
+      </p>
+      <div class="pill-group">
+        <span class="pill"><i class="fa-solid fa-globe"></i> World Economy</span>
+        <span class="pill"><i class="fa-solid fa-landmark"></i> Geopolitics</span>
+        <span class="pill"><i class="fa-solid fa-chart-line"></i> Economics</span>
+        <span class="pill"><i class="fa-solid fa-ship"></i> International Trade</span>
+        <span class="pill"><i class="fa-solid fa-handshake"></i> International Affairs</span>
+      </div>
+    </div>
+
+    <!-- Technical Skillset -->
+    <div class="section-card">
+      <div class="section-title"><i class="fa-solid fa-code"></i> Technical Skillset</div>
+      <p style="color: var(--text-muted);">
+        Expanding capabilities beyond traditional business strategy by learning programming languages, including Python, to bridge quantitative analysis and modern enterprise execution.
+      </p>
+    </div>
+
+    <!-- Featured Projects (Santa's Present Catcher Game & Spec Doc) -->
+    <div class="section-card">
+      <div class="section-title"><i class="fa-solid fa-gamepad"></i> Featured Projects</div>
+      <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 6px;">Santa's Present Catcher</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">
+        An interactive arcade web game built with HTML, CSS, and JavaScript. Players move an elf basket across the screen to catch falling presents, build combo multipliers, and dodge heavy ice blocks.
+      </p>
+      <div class="btn-group">
+        <a href="santa_present_catcher.html" target="_blank" class="btn btn-gold">
+          <i class="fa-solid fa-play"></i> Play Game Live
+        </a>
+        <a href="https://docs.google.com/document/d/1KE-cm-eO-jHWdsjZioatAepOiCz-Gc7BnPHy7i0rv-Q/edit" target="_blank" class="btn btn-outline">
+          <i class="fa-solid fa-file-lines"></i> View Specification Doc
+        </a>
+      </div>
+    </div>
+
+    <!-- Personal Interests (With Aesthetic Icons) -->
+    <div class="section-card">
+      <div class="section-title"><i class="fa-solid fa-heart"></i> Personal Interests</div>
+      <div class="pill-group">
+        <span class="pill"><i class="fa-solid fa-book-open"></i> Reading</span>
+        <span class="pill"><i class="fa-solid fa-microphone"></i> Singing</span>
+        <span class="pill"><i class="fa-solid fa-headphones"></i> Listening to Music</span>
+      </div>
+    </div>
+
+    <!-- Contact & Links -->
+    <div class="section-card">
+      <div class="section-title"><i class="fa-solid fa-envelope"></i> Contact & Links</div>
+      <ul class="styled-list" style="color: var(--text-muted);">
+        <li><strong style="color: var(--text-main);">Email:</strong> kavee2p06@example.com</li>
+        <li><strong style="color: var(--text-main);">GitHub Repository:</strong> <a href="https://github.com/kavee2p06/da" target="_blank" class="contact-link">github.com/kavee2p06/da</a></li>
+        <li><strong style="color: var(--text-main);">Live Web Portfolio:</strong> <a href="https://kavee2p06.github.io/da/" target="_blank" class="contact-link">kavee2p06.github.io/da/</a></li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>© 2026 Kaveesha Karalliyadda • Dong-A University</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
