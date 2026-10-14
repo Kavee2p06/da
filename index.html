@@ -1,263 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaveesha Karalliyadda | Academic Portfolio</title>
-    <style>
-        @keyframes luxuryGlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaveesha Karalliyadda | Portfolio</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-        :root {
-            --bg-deep: #0a0d14;
-            --surface: #121824;
-            --surface-hover: #1b2436;
-            --accent-gold: #d4af37;
-            --accent-glow: #00f0ff;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --border-color: rgba(212, 175, 55, 0.2);
-        }
+  <style>
+    :root {
+      --bg: #07080a;
+      --card-bg: rgba(18, 20, 29, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-gold: #d4af37;
+      --accent-rose: #f43f5e;
+      --accent-glow: rgba(212, 175, 55, 0.12);
+      --text-main: #f8fafc;
+      --text-muted: #a0aec0;
+      --pill-bg: rgba(255, 255, 255, 0.04);
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-main);
-            background-color: var(--bg-deep);
-            line-height: 1.7;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            background: linear-gradient(-45deg, #0a0d14, #121824, #0d1b2a, #1b1f3b);
-            background-size: 300% 300%;
-            animation: luxuryGlow 12s ease infinite;
-            color: white;
-            text-align: center;
-            padding: 5rem 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.7;
+      padding: 50px 20px;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(244, 63, 94, 0.06) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
 
-        header::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, rgba(0, 240, 255, 0.05) 0%, transparent 70%);
-            pointer-events: none;
-        }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            letter-spacing: 1.5px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff, #d4af37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    /* Hero Header */
+    header {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 45px 40px;
+      margin-bottom: 24px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
 
-        header p {
-            margin: 0.75rem 0 0;
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-        }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
+    .profile-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #ffffff 40%, var(--accent-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
 
-        section {
-            background: var(--surface);
-            margin-bottom: 2rem;
-            padding: 2.5rem;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
 
-        section:hover {
-            transform: translateY(-3px);
-            border-color: var(--border-color);
-        }
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        h2 {
-            color: var(--accent-gold);
-            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 0.6rem;
-            margin-top: 0;
-            font-size: 1.4rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
+    .section-card:hover {
+      border-color: rgba(212, 175, 55, 0.3);
+      box-shadow: 0 20px 40px var(--accent-glow);
+      transform: translateY(-2px);
+    }
 
-        p, li {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        strong {
-            color: var(--text-main);
-        }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+    }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.25rem;
-            margin-top: 1.25rem;
-        }
+    /* Sub-grid for Profile Overview */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
 
-        .info-card {
-            background: var(--surface-hover);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 3px solid var(--accent-gold);
-        }
+    .info-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px;
+      transition: all 0.2s ease;
+    }
 
-        .info-card h3 {
-            margin: 0 0 0.4rem 0;
-            font-size: 0.85rem;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .info-box:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(212, 175, 55, 0.2);
+    }
 
-        .info-card p {
-            margin: 0;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
+    .info-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-gold);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
 
-        ul {
-            padding-left: 1.2rem;
-            margin: 0.5rem 0;
-        }
+    .info-val {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
 
-        li {
-            margin-bottom: 0.75rem;
-        }
+    /* Badges & Pills */
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
 
-        a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
+    .pill {
+      background: var(--pill-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
 
-        a:hover {
-            opacity: 0.8;
-            text-decoration: underline;
-        }
+    .pill:hover {
+      border-color: var(--accent-gold);
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
 
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
+    .pill i {
+      color: var(--accent-gold);
+    }
 
-        .tag {
-            background: var(--surface-hover);
-            color: var(--text-main);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
+    /* Buttons for Game & Links */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-    </style>
-</head>
-<body>
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border-radius: 14px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
 
-    <header>
-        <h1>Kaveesha Karalliyadda</h1>
-        <p>Integrated Business Management &mdash; Dong-A University, Busan, South Korea</p>
-    </header>
-
-    <div class="container">
-        
-        <section>
-            <h2>Profile Overview</h2>
-            <p>A curious and determined individual driven by a deep fascination with global dynamics, enterprise, and economic structures. Proudly Sri Lankan, with a steadfast commitment to contributing meaningfully to my home country's future growth.</p>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>Institution</h3>
-                    <p>Dong-A University</p>
-                </div>
-                <div class="info-card">
-                    <h3>Major</h3>
-                    <p>Integrated Business Management</p>
-                </div>
-                <div class="info-card">
-                    <h3>Location</h3>
-                    <p>Busan, South Korea</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Academic Foundation & Credentials</h2>
-            <ul>
-                <li><strong>Pearson Diploma:</strong> Core academic credentials supporting international higher education.</li>
-                <li><strong>Language Competency:</strong> Verified English proficiency (IELTS) and advanced Korean language qualifications (TOPIK II).</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Ambitions & Research Focus</h2>
-            <p>Pursuing this degree to build the foundation for a career as a successful entrepreneur. Passionate about understanding how the world economy functions, exploring international trade, and conducting independent economic research. My core areas of intellectual curiosity span:</p>
-            <div class="tag-container">
-                <span class="tag">World Economy</span>
-                <span class="tag">Geopolitics</span>
-                <span class="tag">Economics</span>
-                <span class="tag">International Trade</span>
-                <span class="tag">International Affairs</span>
-            </div>
-        </section>
-
-        <section>
-            <h2>Technical Skillset</h2>
-            <p>Expanding capabilities beyond traditional business strategy by learning programming languages, including Python, to bridge quantitative analysis and modern enterprise execution.</p>
-        </section>
-
-        <section>
-            <h2>Personal Interests</h2>
-            <div class="tag-container">
-                <span class="tag">Reading</span>
-                <span class="tag">Singing</span>
-                <span class="tag">Listening to Music</span>
-            </div>
-        </section>
-
-        <section>
-            <h2>Contact & Links</h2>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:kavee2p06@example.com">kavee2p06@example.com</a></li>
-                <li><strong>GitHub Repository:</strong> <a href="https://github.com/kavee2p06/da" target="_blank">github.com/kavee2p06/da</a></li>
-                <li><strong>Live Web Portfolio:</strong> <a href="https://kavee2p06.github.io/da/" target="_blank">kavee2p06.github.io/da/</a></li>
-            </ul>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Kaveesha Karalliyadda. Dong-A University. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+    .btn-gold {
+      background: linear-gradient(135deg, #d4af37, #b38f24);
+      color: #
